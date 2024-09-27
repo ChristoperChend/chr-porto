@@ -1,0 +1,19 @@
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+  .typing-effect {
+    overflow: hidden; /* Ensures text does not overflow */
+    white-space: nowrap; /* Prevents text wrapping */
+    border-right: 2px solid; /* The cursor */
+    width: 20%; /* Start with width 0 for the animation */
+    animation:
+      typing 3s steps(30, end) forwards, /* Typing effect */
+      blink 0.75s step-end infinite; /* Blinking cursor */
+  }
+  

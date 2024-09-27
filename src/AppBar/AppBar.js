@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Logo from '../Assets/Logo.svg'
+import CV from '../Assets/Profile.pdf'
 
 function AppBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ function AppBar() {
   };
 
   return (
-    <nav style={{ backgroundColor: "#222831", color: "#EEEEEE" }} className="font-rubik font-medium py-2">
+    <nav style={{ backgroundColor: "#222831", color: "#EEEEEE" }} className="font-rubik font-medium py-2 mb-24">
       <div className="flex justify-between mx-7">
         <div>
           <img src={Logo} className='h-10 w-10 white'></img>
@@ -29,6 +30,10 @@ function AppBar() {
             </svg>
           </button>
         </div>
+
+        <div className="hidden md:flex items-center">
+          <a href={CV} download className="hover:text-teal-400 transition-colors duration-300">Resume</a>
+        </div>
       </div>
 
       {isOpen && (
@@ -38,6 +43,7 @@ function AppBar() {
             <a href="#about" className="hover:text-teal-400 transition-colors duration-300">About</a>
             <a href="#project" className="hover:text-teal-400 transition-colors duration-300">Project</a>
             <a href="#contact" className="hover:text-teal-400 transition-colors duration-300">Contact</a>
+            <a href={CV} download className="hover:text-teal-400 transition-colors duration-300">Resume</a>
           </div>
         </div>
       )}
